@@ -1,0 +1,28 @@
+URL
+1、如果使用的是http协议，浏览器默认使用的是80端口
+2、如果使用的是https协议，浏览器默认使用的是443端口
+url 传参
+
+URL 反转
+1、什么叫做反转url：从视图函数到url的转换叫做反转url
+2、反转URL的用途
+*在页面重定向时会使用
+*在模版中，也会使用URL反转
+url_for(func)
+
+页面重定向redirect
+**结合url_for使用
+
+
+1、如何渲染模版
+*模版放在templates文件夹下
+*在flask导入render_template
+*在视图函数中使用render_template函数
+
+2、模版传参
+*可以直接在render_template函数中，也可以用**dict来使用
+
+3、模版中，传入变量用
+｛｛｝｝
+4、访问模型中的属性或字典，可以用｛｛params.property｝｝,也可以用｛｛params['property'}｝｝
+
