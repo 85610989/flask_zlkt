@@ -5,11 +5,9 @@
     <title>Title</title>
 </head>
 <body>
- hehhehehehehehehehheheh
-<p>用户名：{{ username }}</p>
- <hr>
-<p>性别：{{ gender }}</p>
- <hr>
-<p>age:{{ age }}</p>
+<p>期数，金额</p>
+{% for tuple in age %}
+    <p><a href="#">{{tuple[0]}}</a></p>
+{% endfor %}
 </body>
 </html>

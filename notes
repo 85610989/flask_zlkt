@@ -26,3 +26,52 @@ url_for(func)
 ｛｛｝｝
 4、访问模型中的属性或字典，可以用｛｛params.property｝｝,也可以用｛｛params['property'}｝｝
 
+
+if判断语句
+前端：｛% if *** %｝ #后面没有冒号：
+     {% else %｝
+     ｛% endif %｝
+
+for循环遍历
+｛% for k,v in user.items() %}
+    <p>{{k}}:{{v}}<p>
+{% endfor %}
+
+
+过滤器
+#default 过滤器
+{{ *** | default ('URL') }}
+
+#length 过滤器
+{{***|length}}
+
+继承  #可以把公共的代码继承在代码中
+{% extends 'base.html' %}
+
+{% block *** %}
+{% endblock %}
+
+URL链接
+href='{{ url_for('***')}}'
+
+
+加载静态文件
+加载CSS
+# <link rel ="stylesheet" href="{{url_for('static',filename='cssindex.css')}}"
+加载图形
+<img src="{{url_for('static',filename='images/zhiliao.png')}}" alt=">
+加载JS
+<script src="{{url_for('static',filename='js/index.js')}}"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+

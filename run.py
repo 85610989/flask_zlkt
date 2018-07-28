@@ -1,6 +1,6 @@
 from flask import Flask,redirect,url_for,render_template
 import config
-
+from test import hello
 
 app = Flask(__name__)
 app.config.from_object(config)
@@ -12,9 +12,10 @@ def hello_world():
     context = {
         'username':'jiangzhipeng',
         'gender':'男',
-        'age':18
+        'age':hello()
     }
     return render_template('index.html', **context)
+
 
 @app.route('/login/')
 def article():
