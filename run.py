@@ -8,30 +8,13 @@ import jinja2
 
 @app.route('/')
 def hello_world():
-    #return redirect(url_for('article',id=123))
-    context = {
-        'username':'jiangzhipeng',
-        'gender':'男',
-        'age':hello()
-    }
-    return render_template('index.html', **context)
+
+    return render_template('home.html')
 
 
-@app.route('/login/')
-def article():
-     #return '你请求的参数是:%s' % id
-    return render_template('test.html')
-
-
-@app.route('/question/<is_login>/')
-def question(is_login):
-    if is_login == '1':
-        return '您已经登录'
-    else:
-        return '您没有登录'
 
 
 
 
 if __name__ == '__main__':
-    app.run(debug=app.config['DEBUG'])
+    app.run()

@@ -20,7 +20,13 @@ url_for(func)
 *在视图函数中使用render_template函数
 
 2、模版传参
-*可以直接在render_template函数中，也可以用**dict来使用
+*可以直接在render_template函数中，也可以用**dict来使用\
+context = {
+        'username':'jiangzhipeng',
+        'gender':'男',
+        'age':hello()
+    }
+return render_template('index.html', **context)
 
 3、模版中，传入变量用
 ｛｛｝｝
