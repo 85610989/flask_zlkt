@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title%}{% endblock %}</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css') }}">
+    <script>
+	$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+</script>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <div class="page-header">
+            <h1>真实利率测算<small>Beta 1.0</small></h1>
+            <br>
+            <p><a class="btn btn-success btn-sm" href="#" role="button" data-toggle="modal" data-target="#myModal">By JiangZhipeng</a></p>
+        </div>
+    </div>
+    {% block main %}{% endblock %}
+    <!-- model -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">CARD</h4>
+              </div>
+              <div class="modal-body">
+                <address>
+                  <strong>Swipal, Inc.</strong><br>
+                  Zhongshan Garden Road, Nanshan District, Shenzhen,<br>
+                  Tcl international E city F5-1B<br>
+                  <abbr title="Phone">P:</abbr> (0755) 13888888888
+                </address>
+
+                <address>
+                  <strong>Zhipeng Jiang</strong><br>
+                  <a href="https://www.taojinjia.com/">jiangzhipeng@taojinjia.com</a>
+                </address>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+</body>
+</html>

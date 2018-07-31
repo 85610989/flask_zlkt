@@ -8,9 +8,10 @@ def average_capital_plus_interest(PV,mouth_rate,nper,Sum_interest=0):
         EIR=mouth_rate*12 #有效年化利率
         PMT = PPMT + IPMT
         Sum_interest+=IPMT
-        yield i,-PPMT,-IPMT,-PMT
+        yield i,round(-PPMT,1),round(-IPMT,1),round(-PMT,1)
         if i == nper:
-            yield Sum_interest,round(EIR,4)
+            yield "总利息："+str(round(-Sum_interest,1)),"实际利率："+str("%.2f%%" % (EIR * 100))
+
 
 
 #等额本息by 实际利息
@@ -39,7 +40,7 @@ def average_capital(PV,mouth_rate,nper,Sum_interest=0):
         PMT=PPMT+IPMT
         yield i,round(left_capital,1),round(PPMT,1), round(IPMT,1), round(PMT,1),round(mouth_rate,4)
         if i == nper:
-            yield Sum_interest, round(EIR,4)
+            yield Sum_interest, "%.2f%%" % (EIR * 100)
 
 
 
@@ -76,6 +77,3 @@ def interest_first_then_capital(PV,mouth_rate,nper):
         if i == nper:
             yield Sum_interest, round(EIR, 4)
 
-
-for i in interest_first_then_capital(10000,0.007,48):
-    print(i)

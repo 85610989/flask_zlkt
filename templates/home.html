@@ -1,97 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>真实利率测算</title>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css') }}">
-</head>
-<body>
-<div class="container">
-    <div class="jumbotron">
-        <div class="page-header">
-            <h1>真实利率测算<small>Beta 1.0</small></h1>
-            <br>
-            <p><a class="btn btn-info" href="#" role="button">By JiangZhipeng</a></p>
-        </div>
-    </div>
+{% extends 'base.html' %}
+
+{% block title%}home{% endblock %}
+
+{% block main %}
     <div class="main">
         <form  action="" method="post">
             <div class="form-container" id="form-container-1">
-              <h2 class="page-title" id="page-title-1"> 等额本息 </h2><br>
-              <div class="form-group">
-                  <input type="number" class="form-control" id="inputNumber11" placeholder="请输入金额">
-              </div>
-              <div class="form-group">
-                  <input type="number" class="form-control" id="inputNumber12" placeholder="请输入月利率（%）">
-              </div>
-              <div class="form-group">
-                  <input type="number" class="form-control" id="inputNumber13" placeholder="请输入贷款期数">
-              </div>
-              <div class="form-group">
-                  <button type="submit" class="btn btn-default btn-block">Submit</button>
-              </div>
+                <h2 class="page-title" id="page-title-1"> 开始测算 </h2><br>
+                <div class="form-group">
+                    <input type="number" name="money" class="form-control input-lg" id="inputNumber11" placeholder="please input money(￥)">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="rate" class="form-control input-lg" id="inputNumber12" placeholder="please input mouth-rate(%)">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="term" class="form-control input-lg" id="inputNumber13" placeholder="please input term(Mouth)">
+                </div>
+                <div class="form-group">
+                    <label for="selectStyle" class="col-sm-2 control-label sr-only">term</label>
+                    <select class="form-control input-lg" name='repayMethod' id="selectStyle">
+                        <option>等额本息</option>
+                        <option>等额本金</option>
+                        <option>等本等息</option>
+                        <option>先息后本</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">Submit</button>
+                </div>
             </div>
         </form>
-        <br>
-        <form  action="" method="post">
-            <div class="form-container" id="form-container-2">
-              <h2 class="page-title" id="page-title-2"> 等本等息 </h2><br>
-              <div class="form-group">
-                  <input type="number" class="form-control" id="inputNumber21" placeholder="请输入金额">
-              </div>
-              <div class="form-group">
-                  <input type="number" class="form-control" id="inputNumber22" placeholder="请输入月利率（%）">
-              </div>
-              <div class="form-group">
-                  <input type="number" class="form-control" id="inputNumber23" placeholder="请输入贷款期数">
-              </div>
-              <div class="form-group">
-                  <button type="submit" class="btn btn-default btn-block">Submit</button>
-              </div>
-            </div>
-        </form>
-        <br>
-        <form  action="" method="post">
-            <div class="form-container" id="form-container-3">
-              <h2 class="page-title" id="page-title-3"> 等额本金 </h2><br>
-              <div class="form-group">
-                  <input type="number" class="form-control" id="inputNumber31" placeholder="请输入金额">
-              </div>
-              <div class="form-group">
-                  <input type="number" class="form-control" id="inputNumber32" placeholder="请输入月利率（%）">
-              </div>
-              <div class="form-group">
-                  <input type="number" class="form-control" id="inputNumber33" placeholder="请输入贷款期数">
-              </div>
-              <div class="form-group">
-                  <button type="submit" class="btn btn-default btn-block">Submit</button>
-              </div>
-            </div>
-        </form>
-        <br>
-        <form  action="" method="post">
-            <div class="form-container" id="form-container-4">
-              <h2 class="page-title" id="page-title-4"> 先息后本 </h2><br>
-              <div class="form-group">
-                  <input type="number" class="form-control" id="inputNumber41" placeholder="请输入金额">
-              </div>
-              <div class="form-group">
-                  <input type="number" class="form-control" id="inputNumber42" placeholder="请输入月利率（%）">
-              </div>
-              <div class="form-group">
-                  <input type="number" class="form-control" id="inputNumber43" placeholder="请输入贷款期数">
-              </div>
-              <div class="form-group">
-                  <button type="submit" class="btn btn-default btn-block">Submit</button>
-              </div>
-            </div>
-        </form>
-        <br>
     </div>
-</div>
+{% endblock %}
 
-</body>
-</html>
